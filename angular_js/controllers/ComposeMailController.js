@@ -31,7 +31,6 @@ adminDashboardApp.controller('ComposeMailController', function($scope, $routePar
             .success(function(data) {            	
                 if (!data.success) {                    
                     document.getElementById('processStatusDiv').innerHTML = data.message;
-
                 } else {        
                 //now clear the form for new insertion...that is the beauty of two-way-binding...
                     $scope.composeMailForm.mailTo = "";

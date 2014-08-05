@@ -5,19 +5,18 @@
         <form role="form">            
             <div class="form-group">        
                 <label>Title</label>
-                <input ng-model="centerBox.title" class="form-control" id="title" type="text" placeholder="Enter the title..." required=""/>
+                <input ng-model="centerBoxForm.title" class="form-control" id="title" name="title" type="text" placeholder="Enter the title..." required=""/>
             </div>            
             <div class="form-group">
                 <label>The Content</label>
-                <textarea ng-model="centerBox.content" 
-                class="form-control jqte-test" id="content" required=""></textarea>
+                <textarea ng-model="centerBoxForm.content" class="form-control jqte-test" id="content" name="content" required=""></textarea>
             </div>
             <div class="error-text">
                 {{message}}
             </div>
-            <button type="button" class="btn btn-primary" ng-click="sendMail();">Save
+            <button type="button" class="btn btn-primary" ng-click="saveCenterBoxContent();"> Save
             </button>
-            <button type="reset" class="btn btn-primary">Reset</button>    
+            <button type="reset" class="btn btn-primary"> Reset</button>    
         </form>
         
     </div>
