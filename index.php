@@ -21,8 +21,9 @@
 		<div id="container"> 
 			<!-- Header begin-->
 			<?php
-                            include_once 'page_sections/index_header.php';
-                        ?>
+				require_once 'core/indexinit.php';
+                include_once 'page_sections/index_header.php';
+             ?>
 			<!-- Header end --> 
 			<!-- slide start -->
 			<?php

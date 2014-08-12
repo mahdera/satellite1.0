@@ -34,7 +34,7 @@
                         <a ng-href="#/view/setting/centerbox/content/add">Add Content</a>
                     </li>
                     <li>
-                        <a href="buttons.html">View Content</a>
+                        <a href="#/view/setting/centerbox/content/view">View Content</a>
                     </li>                    
                 </ul>
                 <!-- /.nav-second-level -->

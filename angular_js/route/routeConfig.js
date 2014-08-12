@@ -47,6 +47,10 @@ adminDashboardApp.config(['$routeProvider',
         when('/view/setting/centerbox/content/add',{
             templateUrl: 'show_add_centerbox_content_form.php',
             controller: 'AddCenterBoxContentController'
+        }).
+        when('/view/setting/centerbox/content/view',{
+        		templateUrl: 'show_centerbox_content_list.php',
+        		controller: 'ListCenterBoxContentController'
         });
         
         

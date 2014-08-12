@@ -29,7 +29,7 @@ class MailDAO {
                 'mail_status'                   => $mail->getMailStatus()                
             )); 
 
-            if(! DBConnection::getInstance()->insert('tbl_mail', $mailInsert) ){
+            if(! DBConnection::getInstance()->insert('tbl_mail', $mailInsert = array()) ){
                 throw new Exception('There was a problem sending email.');
             }           
         } catch (Exception $ex) {

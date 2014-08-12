@@ -11,7 +11,7 @@
                 <label>The Content</label>
                 <textarea ng-model="centerBoxForm.content" class="form-control jqte-test" id="content" name="content" required=""></textarea>
             </div>
-            <div class="error-text">
+            <div class="error-text" id="processStatusDiv">
                 {{message}}
             </div>
             <button type="button" class="btn btn-primary" ng-click="saveCenterBoxContent();"> Save

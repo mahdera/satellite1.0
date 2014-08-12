@@ -11,7 +11,7 @@
  *
  * @author alemayehu
  */
-require_once '../lib/PHPDebug.php';
+//require_once '../lib/PHPDebug.php';
 
 class DBConnection {
     private static $_instance = null;
@@ -76,7 +76,7 @@ class DBConnection {
                     $x++;
                 }
             }
-                        
+            //var_dump($expression)            
             if($this->_query->execute()){
                 $this->_results = $this->_query->fetchAll(PDO::FETCH_OBJ);
                 $this->_count = $this->_query->rowCount();
@@ -100,18 +100,28 @@ class DBConnection {
             $value = $where[2];
             
             if(in_array($operator, $operators)){
-                $sql = "{$action} FROM {$table} WHERE {$field} {$operator} ?";
-                //echo $sql;
-                if( !$this->query($sql, array($value))->error() ){
-                    //var_dump($sql);
+                $sql = "{$action} FROM {$table} WHERE {$field} {$operator} ?";                
+                if( !$this->query($sql, array($value))->error() ){                    
                     return $this;//was this
                 }
             }
         }
     }
     
-    public function get($table, $where){
-        //echo 'inside get() : '.$table.' '.var_dump($where);
+    public function doThisQuery($action, $table, $howManyRecords, $orderColumn, $sortOrder){
+	    	$sql = "{$action} FROM {$table} ORDER BY {$orderColumn} {$sortOrder} LIMIT 1, {$howManyRecords}";
+	    	if($this-> _query = $this->_pdo->prepare($sql)){
+	    		//now bind the query values to the prepared statement...
+	    		//$this->_query->bindValue(1, $)	    	
+		    	if($this->_query->execute()){
+		    		$this->_results = $this->_query->fetchAll(PDO::FETCH_OBJ);
+		    		$this->_count = $this->_query->rowCount();
+		    		return $this;
+		    	}
+	    	}
+    }
+    
+    public function get($table, $where){        
         return $this->action('SELECT *', $table, $where);
     }
     
@@ -119,7 +129,8 @@ class DBConnection {
         return $this->action('DELETE', $table, $where);
     }
 
-    public function insert($table, $fields = array()){
+    public function insert($table, $fields = array() ){
+    		//var_dump($fields);
         if(count($fields)){
             $keys = array_keys($fields);
             $values = '';

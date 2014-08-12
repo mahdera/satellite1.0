@@ -1,39 +1,43 @@
 'use strict';
 
-adminDashboardApp.controller('AddCenterBoxContentController', function AddCenterBoxContentController($scope, $http){
+adminDashboardApp.controller('AddCenterBoxContentController', function AddCenterBoxContentController($scope, $routeParams, $http){
 	$scope.centerBoxForm = {};
 	
+	angular.element(document).ready(function () {        
+        $scope.centerBoxForm.userId = $routeParams.uId;
+    });//end document.ready function
+	
     $scope.saveCenterBoxContent = function(){
-    	var title = $scope.centerBoxForm.title;
-    	var content = document.getElementById('content').value;
-    	//now check if the values are not empty
-    	if(title === ""){
-    		$scope.message = "Enter the title";
-    		document.getElementById('title').focus();
-    	}else if(content === ""){
-    		$scope.message = "Enter the content";
-    		document.getElementById('content').focus();
-    	}else{
-    		//is valid
-    		$scope.centerBoxForm.content = document.getElementById('content').value;
-    		$http({
-                method  : 'POST',
-                url     : 'save_center_box_content.php',
-                data : serializeData($scope.centerBoxForm),
-                headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
-            })
-            .success(function(data) {            	
-                if (!data.success) {                    
-                    document.getElementById('processStatusDiv').innerHTML = data.message;
-                } else {        
-                //now clear the form for new insertion...that is the beauty of two-way-binding...
-                    $scope.centerBoxForm.mailTo = "";
-                    $scope.centerBoxForm.mailTitle = "";
-                    document.getElementById('mailContent').innerHTML = "";
-                    document.getElementById('processStatusDiv').innerHTML = data.message;
-                }
-            });
-    	}
+	    	var title = $scope.centerBoxForm.title;
+	    	var content = document.getElementById('content').value;
+	    	//now check if the values are not empty
+	    	if(title === ""){
+	    		$scope.message = "Enter the title";
+	    		document.getElementById('title').focus();
+	    	}else if(content === ""){
+	    		$scope.message = "Enter the content";
+	    		document.getElementById('content').focus();
+	    	}else{
+	    		//is valid
+	    		$scope.centerBoxForm.content = document.getElementById('content').value;
+	    		$http({
+	                method  : 'POST',
+	                url     : 'save_center_box_content.php',
+	                data : serializeData($scope.centerBoxForm),
+	                headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+	            })
+	            .success(function(data) { 
+	            		//alert(data);
+	                if (!data.success) {                    
+	                    document.getElementById('processStatusDiv').innerHTML = data.message;
+	                } else {        
+	                //now clear the form for new insertion...that is the beauty of two-way-binding...
+	                    $scope.centerBoxForm.title = "";	                    
+	                    document.getElementById('content').innerHTML = "";
+	                    document.getElementById('processStatusDiv').innerHTML = data.message;
+	                }
+	            });
+	    	}
     };
     
     function serializeData( data ) {
