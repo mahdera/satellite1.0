@@ -37,3 +37,5 @@
 <script type="text/javascript" src="../angular_js/controllers/ListImageSliderController.js"></script>
 <script type="text/javascript" src="../angular_js/controllers/ListDeleteImageSliderController.js"></script>
 <script type="text/javascript" src="../angular_js/controllers/AddCenterBoxContentController.js"></script>
+<script type="text/javascript" src="../angular_js/controllers/ListCenterBoxContentController.js"></script>
+<script type="text/javascript" src="../angular_js/controllers/EditCenterBoxConttentController.js"></script>

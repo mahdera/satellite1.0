@@ -58,6 +58,10 @@ class CenterBoxContentDAO{
 		}
 	}
 	
+	public function findAllCenterBoxContents(){
+		$data = DBConnection::getInstance()->get('tbl_center_box_content', array('center_box_content_id', '>', 0));
+		return $data;
+	}
 }//end class
 
 ?>

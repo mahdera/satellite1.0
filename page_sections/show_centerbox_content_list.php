@@ -5,56 +5,59 @@
 	//now get the data from the database...
 	$data = array();
 
-	$centerBoxContent = new CenterBoxContent();
-	
-	$sentMailList = $mail->getAllMailsFrom($userId);
+	$centerBoxContent = new CenterBoxContent();	
+	$contentList = $centerBoxContent->getAllCenterBoxContents();
 
-	//var_dump($sentMailList);
+	//var_dump($contentList);
 
-	if(!empty($sentMailList)){
-		if($sentMailList->count()){	
-			$data = $sentMailList->getResults();		
+	if(!empty($contentList)){
+		if($contentList->count()){	
+			$boxContentResultSet = $contentList->getResults();		
 		}
 	}else{
-		echo 'Sent mail empty';
+		echo 'Center box content is empty';
 	}
 
-	//echo gettype($data);
+	//var_dump($boxContentResultSet);
 ?>
-<h4>Sent Mail</h4>
+<h4>Center Box Contents</h4>
 <!-- /.panel-heading -->
 <div class="panel-body">
-	<div class="table-responsive" >
-		
+	<div class="table-responsive" >		
 		<table class="table table-striped table-bordered table-hover" id="dataTables-example">
 			<thead>
 				<tr>
-					<th>Ser.No</th>
-					<th>To</th>
+					<th>Ser.No</th>					
 					<th>Title</th>
-					<th>Message</th>
+					<th>Post Date</th>					
+					<th>Content</th>
+					<th>Edit</th>
 					<th>Delete</th>					
 				</tr>
 			</thead>
 			<tbody>	
 				<?php
 					$ctr = 1;
-					foreach($data as $sentMail){
-						$mailId = $sentMail->mail_id;
+					foreach($boxContentResultSet as $boxContent){						
+						$centerBoxContentId = $boxContent->center_box_content_id;
 						?>
 							<tr class="gradeA">
 								<td><?php echo $ctr++;?></td>
-								<td><?php echo $sentMail->to_user_id;?></td>
-								<td><?php echo $sentMail->mail_title;?></td>
+								<td><?php echo $boxContent->title;?></td>
+								<td><?php echo $boxContent->post_date;?></td>
+								
 								<td>
-									<a ng-href="" ng-click="showMailContentDetail(<?php echo $mailId; ?>);">
+									<a ng-href="">
 										<?php
-											echo '<div style="display:inline-block; overflow:hidden; width:250px; height:45px;">'.strip_tags($sentMail->mail_content).'</div>';
+											echo '<div style="display:inline-block; overflow:hidden; width:250px; height:45px;">'.strip_tags($boxContent->content).'</div>';
 										?>
 									</a>
 								</td>
 								<td class="center">
-									<a href="#/action/mail/delete/<?php echo $mailId;?>">D</a>
+									<a href="#/view/setting/centerbox/content/edit/<?php echo $centerBoxContentId;?>">E</a>
+								</td>
+								<td class="center">
+									<a href="#/view/setting/centerbox/content/view/<?php echo $centerBoxContentId;?>">D</a>
 								</td>
 							</tr>				
 						<?php
@@ -63,7 +66,7 @@
 			</tbody>
 		</table>
 		<hr/>
-		<div id="sentMailDetailDiv"></div>
+		<div id="centerBoxContentDetailDiv"></div>
 	</div>
 </div>
 <script type="text/javascript">

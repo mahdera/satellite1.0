@@ -93,5 +93,10 @@
 	        	return $topRecordResultSet;
         }
         
+        public function getAllCenterBoxContents(){	        	
+	        	$centerBoxContentDao = new CenterBoxContentDAO();
+	        	$fetchedCenterBoxContents = $centerBoxContentDao->findAllCenterBoxContents();	        	
+	        	return $fetchedCenterBoxContents;
+        }
     }//end class    
 ?>
