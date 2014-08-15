@@ -52,3 +52,14 @@ create table tbl_center_box_content(
     primary key(center_box_content_id),
     foreign key(modified_by) references tbl_user(id)
 );
+
+create table tbl_lower_box_content(
+    lower_box_content_id int auto_increment,
+    title varchar(70) not null,
+    content text not null,
+    post_date datetime not null,
+    modified_by int not null,
+    modification_date datetime not null,
+    primary key(lower_box_content_id),
+    foreign key(modified_by) references tbl_user(id)
+);
