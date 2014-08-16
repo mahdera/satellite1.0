@@ -56,7 +56,7 @@ adminDashboardApp.config(['$routeProvider',
                     templateUrl: 'show_edit_centerbox_content_form.php',
                     controller: 'EditCenterBoxConttentController'
                 }).
-                when('/view/setting/lowerbox/content/add', {
+                when('/view/setting/lowerbox/content/add/:uId', {
                     templateUrl: 'show_add_lowerbox_content_form.php',
                     controller: 'AddLowerBoxContentController'
                 });

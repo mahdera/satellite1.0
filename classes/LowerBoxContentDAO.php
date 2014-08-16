@@ -24,7 +24,7 @@ class LowerBoxContentDAO {
                 'title' => $lowerBoxContent->getTitle(),
                 'content' => $lowerBoxContent->getContent(),
                 'post_date' => $lowerBoxContent->getPostDate(),
-                'which_column' => $lowerBoxContent->getWhichDate(),
+                'which_column' => $lowerBoxContent->getWhichColumn(),
                 'modified_by' => $lowerBoxContent->getModifiedBy(),
                 'modification_date' => $lowerBoxContent->getModificationDate()
             ));
@@ -62,9 +62,9 @@ class LowerBoxContentDAO {
         return false;
     }
 
-    public function getOnlySelectedRecords($tableName, $howManyRecords, $orderColumn, $sortOrder) {
+    public function getOnlySelectedRecords($tableName, $howManyRecords, $orderColumn, $sortOrder, $whichColumn) {
         $action = "SELECT * ";
-        $resultSet = DBConnection::getInstance()->doThisQuery($action, $tableName, $howManyRecords, $orderColumn, $sortOrder);
+        $resultSet = DBConnection::getInstance()->doThisQueryLowerBox($action, $tableName, $howManyRecords, $orderColumn, $sortOrder, $whichColumn);
 
         if ($resultSet->count()) {
             $this->data = $resultSet->first();

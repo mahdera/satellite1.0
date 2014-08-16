@@ -85,7 +85,7 @@
         public function getTopCenterBoxContent($howMany){
 	        	$tableName = "tbl_center_box_content";
 	        	$orderColumn = "post_date";
-	        	$sortOrder = "desc";
+	        	$sortOrder = "DESC";
 	        	$howManyRecords = $howMany;
 	        	//now get the first top element from this table order by column in some arrangment...
 	        	$centerBoxContentDao = new CenterBoxContentDAO();

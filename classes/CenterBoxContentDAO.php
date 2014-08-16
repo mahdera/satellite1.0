@@ -51,7 +51,7 @@ class CenterBoxContentDAO{
 	public function getOnlySelectedRecords($tableName, $howManyRecords, $orderColumn, $sortOrder){
 		$action = "SELECT * ";
 		$resultSet = DBConnection::getInstance()->doThisQuery($action, $tableName, $howManyRecords, $orderColumn, $sortOrder);
-		
+		//var_dump($resultSet);
 		if($resultSet->count()){
 			$this->data = $resultSet->first();
 			return $this->data;

@@ -46,7 +46,7 @@
                         <a href="#">First Column <span class="fa arrow"></span></a>
                         <ul class="nav nav-third-level">
                             <li>
-                                <a href="#/view/setting/lowerbox/content/add">Add Content</a>
+                                <a href="#/view/setting/lowerbox/content/add/<?php echo $userId;?>">Add Content</a>
                             </li>
                             <li>
                                 <a href="#/view/setting/lowerbox/content/view">View Content</a>

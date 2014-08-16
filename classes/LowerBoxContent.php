@@ -106,14 +106,14 @@ class LowerBoxContent {
         $lowerBoxContentDao->delete($lowerBoxContent);
     }
 
-    public function getTopLowerBoxContent($howMany) {
+    public function getTopFirstColumnLowerBoxContent($howMany) {
         $tableName = "tbl_lower_box_content";
         $orderColumn = "post_date";
         $sortOrder = "desc";
         $howManyRecords = $howMany;
         //now get the first top element from this table order by column in some arrangment...
         $lowerBoxContentDao = new LowerBoxContentDAO();
-        $topRecordResultSet = $lowerBoxContentDao->getOnlySelectedRecords($tableName, $howManyRecords, $orderColumn, $sortOrder);
+        $topRecordResultSet = $lowerBoxContentDao->getOnlySelectedRecordsFirstColumn($tableName, $howManyRecords, $orderColumn, $sortOrder);
         return $topRecordResultSet;
     }
 
