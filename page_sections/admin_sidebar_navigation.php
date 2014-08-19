@@ -43,7 +43,7 @@
                 <a href="#" style="color:black"><i class="fa fa-sitemap fa-fw"></i> <strong>Lower Box</strong><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">                    
                     <li>
-                        <a href="#">First Column <span class="fa arrow"></span></a>
+                        <a href="#">Manage Content <span class="fa arrow"></span></a>
                         <ul class="nav nav-third-level">
                             <li>
                                 <a href="#/view/setting/lowerbox/content/add/<?php echo $userId;?>">Add Content</a>
@@ -53,31 +53,7 @@
                             </li>                            
                         </ul>
                         <!-- /.nav-third-level -->
-                    </li>
-                    <li>
-                        <a href="#">Second Column <span class="fa arrow"></span></a>
-                        <ul class="nav nav-third-level">
-                            <li>
-                                <a href="#">Add Content</a>
-                            </li>
-                            <li>
-                                <a href="#">View Content</a>
-                            </li>                            
-                        </ul>
-                        <!-- /.nav-third-level -->
-                    </li>
-                    <li>
-                        <a href="#">Third Column <span class="fa arrow"></span></a>
-                        <ul class="nav nav-third-level">
-                            <li>
-                                <a href="#">Add Content</a>
-                            </li>
-                            <li>
-                                <a href="#">View Content</a>
-                            </li>                            
-                        </ul>
-                        <!-- /.nav-third-level -->
-                    </li>
+                    </li>                    
                 </ul>
                 <!-- /.nav-second-level -->
             </li> 

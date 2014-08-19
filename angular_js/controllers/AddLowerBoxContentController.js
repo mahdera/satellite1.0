@@ -32,17 +32,17 @@ adminDashboardApp.controller('AddLowerBoxContentController', function AddLowerBo
                 data: serializeData($scope.lowerBoxForm),
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}  // set the headers so angular passing info as form data (not request payload)
             })
-                    .success(function(data) {
-                        //alert(data);
-                        if (!data.success) {
-                            document.getElementById('processStatusDiv').innerHTML = data.message;
-                        } else {
-                            //now clear the form for new insertion...that is the beauty of two-way-binding...
-                            $scope.lowerBoxForm.title = "";
-                            document.getElementById('content').innerHTML = "";
-                            document.getElementById('processStatusDiv').innerHTML = data.message;
-                        }
-                    });
+            .success(function(data) {
+                //alert(data);
+                if (!data.success) {
+                    document.getElementById('processStatusDiv').innerHTML = data.message;
+                } else {
+                    //now clear the form for new insertion...that is the beauty of two-way-binding...
+                    $scope.lowerBoxForm.title = "";
+                    document.getElementById('content').innerHTML = "";
+                    document.getElementById('processStatusDiv').innerHTML = data.message;
+                }
+            });
         }
     };
 
