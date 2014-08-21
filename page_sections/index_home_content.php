@@ -24,22 +24,29 @@
         $topLowerSecondColumnBoxRecord = $lowerBoxContent->getTopLowerBoxContentOfColumn(1, "Second Column");
         $topLowerThridColumnBoxRecord = $lowerBoxContent->getTopLowerBoxContentOfColumn(1, "Third Column");
     ?>
-    <div class="col_201 alpha mobile-collapse" style="text-align: justify">
+    <div class="col_201 alpha mobile-collapse" style="text-align: left">
         <h3 class="replace"><?php echo $topLowerFirstColumnBoxRecord->title;?></h3>
         <div class="thumbnail_60_left" style="background: url(&quot;img/stock/60x60_thumbnail_5.jpg&quot;) repeat;"></div>
-        <p class="landing_col1"><?php echo $topCenterBoxContentRecord->content;?></p>
+        <p class="landing_col1">            
+            <?php echo implode(' ', array_slice(explode(' ', $topLowerFirstColumnBoxRecord->content), 0, 200));?>
+            ...
+        </p>
         <a href="#" class="fancy small">Learn More <img class="arrow" src="img/nav-right-arrow.png"/></a><br/>
     </div>
-    <div class="col_201 mobile-collapse" style="text-align: justify">
+    <div class="col_201 mobile-collapse" style="text-align: left">
         <h3 class="replace"><?php echo $topLowerSecondColumnBoxRecord->title;?></h3>
         <div class="thumbnail_60_left" style="background: url(&quot;img/stock/60x60_thumbnail_4.jpg&quot;) repeat;"></div>
-        <p class="landing_col mobile-collapse"><?php echo $topLowerSecondColumnBoxRecord->content;?></p>
+        <p class="landing_col mobile-collapse">
+            <?php echo implode(' ', array_slice(explode(' ', $topLowerSecondColumnBoxRecord->content), 0, 200));?>
+        </p>
         <a href="#" class="fancy small">Learn More <img class="arrow" src="img/nav-right-arrow.png"/></a><br/>
     </div>
-    <div class="col_201 omega mobile-collapse" style="text-align: justify">
+    <div class="col_201 omega mobile-collapse" style="text-align: left">
         <h3 class="replace"><?php echo $topLowerThridColumnBoxRecord->title;?></h3>
         <div class="thumbnail_60_left" style="background: url(&quot;img/stock/60x60_thumbnail_6.jpg&quot;) repeat;"></div>
-        <p class="landing_col"><?php echo $topLowerThridColumnBoxRecord->content;?></p>
+        <p class="landing_col">
+            <?php echo implode(' ', array_slice(explode(' ', $topLowerThridColumnBoxRecord->content), 0, 200));?>
+        </p>
         <a href="#" class="fancy small">Learn More <img class="arrow" src="img/nav-right-arrow.png"/></a><br/>
     </div>
 </div>
