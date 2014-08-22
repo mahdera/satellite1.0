@@ -34,7 +34,7 @@
 			<div id="main" class="round_8 clearfix mobile-collapse">
                                 <!--home content start-->
                                 <?php
-                                    include_once 'page_sections/index_home_content.php';
+                                    include_once 'page_sections/signup_content.php';
                                 ?>				
                                 <!--home content end-->
                                 

@@ -7,7 +7,8 @@
         <li><a href="#">Samples</a></li>
         <li><a href="#">Gallery</a></li>
         <li><a href="colors.html">Colors</a></li>
-        <li> <a href="landing.html">Landing page</a></li>
+        <li><a href="landing.html">Landing page</a></li>
+        <li><a href="signup.php">Sign up</a></li>
     </ul>
     <!-- Navigation end --> 
 </div>
