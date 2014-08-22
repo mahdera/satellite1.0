@@ -72,8 +72,8 @@ class NewsDAO {
         }
     }
 
-    public function findAllLowerBoxContents() {
-        $data = DBConnection::getInstance()->get('tbl_lower_box_content', array('lower_box_content_id', '>', 0));
+    public function findAllNews() {
+        $data = DBConnection::getInstance()->get('tbl_news', array('news_id', '>', 0));
         return $data;
     }
     

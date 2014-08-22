@@ -75,3 +75,17 @@ create table tbl_news(
     primary key(news_id),
     foreign key(modified_by) references tbl_user(user_id)
 );
+
+create table tbl_member(
+    member_id int auto_increment,
+    first_name varchar(30) not null,
+    last_name varchar(30) not null,
+    organization varchar(200) not null,
+    description text not null,
+    user_id int not null,
+    modified_by int not null,
+    modification_date datetime not null,
+    primary key(member_id),
+    foreign key(user_id) references tbl_user(user_id),
+    foreign key(modified_by) references tbl_user(user_id)
+);
