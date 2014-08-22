@@ -39,7 +39,7 @@ create table tbl_home_page_image_slider(
     modified_by int not null,
     modification_date datetime not null,
     primary key(image_id),
-    foreign key(modified_by) references tbl_user(id)
+    foreign key(modified_by) references tbl_user(user_id)
 );
 
 create table tbl_center_box_content(
@@ -50,7 +50,7 @@ create table tbl_center_box_content(
     modified_by int not null,
     modification_date datetime not null,
     primary key(center_box_content_id),
-    foreign key(modified_by) references tbl_user(id)
+    foreign key(modified_by) references tbl_user(user_id)
 );
 
 create table tbl_lower_box_content(
@@ -61,5 +61,17 @@ create table tbl_lower_box_content(
     modified_by int not null,
     modification_date datetime not null,
     primary key(lower_box_content_id),
-    foreign key(modified_by) references tbl_user(id)
+    foreign key(modified_by) references tbl_user(user_id)
+);
+
+create table tbl_news(
+    news_id int auto_increment,
+    title varchar(70) not null,
+    author varchar(70) not null,
+    post_date datetime not null,
+    news_detail text not null,
+    modified_by int not null,
+    modification_date datetime not null,
+    primary key(news_id),
+    foreign key(modified_by) references tbl_user(user_id)
 );
