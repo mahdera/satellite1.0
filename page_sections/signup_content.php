@@ -4,7 +4,7 @@
     
     <div class="intro mobile-collapse">
         <div id="errorDiv" class="red page_title round_6" style="display: none"></div>
-        <div id="successDiv" class="green page_title round_6" style="display: none">pymt</div>
+        <div id="successDiv" class="green page_title round_6" style="display: none"></div>
         <form action="#.php" id="contact_form" method="post">
                 <div class="form_field">
                     <label><strong><font color="red">*</font>First Name</strong> </label>
@@ -19,8 +19,20 @@
                         <input type="email" name="txtemail" id="txtemail" class="text round_6" size="70%" />
                 </div>
                 <div class="form_field">
+                        <label><strong><font color="red">*</font>Username</strong> </label>
+                        <input type="text" name="txtusername" id="txtusername" class="text round_6" size="70%" />
+                </div>
+                <div class="form_field">
+                        <label><strong><font color="red">*</font>Password</strong> </label>
+                        <input type="password" name="txtpassword" id="txtpassword" class="text round_6" size="70%" />
+                </div>
+                <div class="form_field">
+                        <label><strong><font color="red">*</font>Confirm Password</strong> </label>
+                        <input type="password" name="txtconfirmpassword" id="txtconfirmpassword" class="text round_6" size="70%" />
+                </div>
+                <div class="form_field">
                         <label><strong>Organization</strong></label>
-                        <input type="text" name="txtorganization" id="txtorganization" class="text round_6" size="100%" />
+                        <input type="text" name="txtorganization" id="txtorganization" class="text round_6" size="94%" />
                 </div>
                 <div class="form_field">
                         <label><strong>Description</strong> </label>
@@ -61,12 +73,19 @@
                         description;
                 //now do the ajax call...
                 $.ajax({
-                    url: 'register_member.php',		
+                    url: 'page_sections/register_member.php',		
                     data: dataString,
                     type:'POST',
                     success:function(response){
                         $('#errorDiv').html('');
+                        $('#errorDiv').hide();
                         $('#successDiv').html(response);                        
+                        $('#successDiv').show();
+                        //now clear the fields
+                        clearFormInputFields();
+                        setTimeout(function() {
+                            $('#successDiv').fadeOut('slow');
+                        }, 2000); // <-- time in milliseconds
                     },
                     error:function(error){
                         alert(error);
@@ -76,8 +95,35 @@
             
         });//end btn.click function
         
-        $('#txtfirstname').change(function(){
-            
+        
+        $('#txtfirstname').keyup(function(){
+            if($(this).val() !== ""){
+                $('#errorDiv').html('');
+                $('#errorDiv').hide();
+            }
         });
+        
+        $('#txtlastname').keyup(function(){
+            if($(this).val() !== ""){
+                $('#errorDiv').html('');
+                $('#errorDiv').hide();
+            }
+        });
+        
+        $('#txtemail').keyup(function(){
+            if($(this).val() !== ""){
+                $('#errorDiv').html('');
+                $('#errorDiv').hide();
+            }
+        });  
+        
+        function clearFormInputFields(){
+            $('#txtfirstname').val('');
+            $('#txtlastname').val('');
+            $('#txtemail').val('');
+            $('#txtorganization').val('');
+            $('#textareadescription').val('');            
+        }
+        
     });//end document.ready function
 </script>
