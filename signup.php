@@ -14,6 +14,7 @@
 	<link rel="shortcut icon"  href="img/favicon.ico" />
         <!-- Responsive CSS section -->
         <link rel="stylesheet" href="css/responsive.css" type="text/css" media="screen and (max-width: 900px)"/>
+        <script type="text/javascript" src="admin_js/jquery-1.11.0.js"></script>
 </head>
 <body>
 	<div id="content-wrapper"> 
@@ -25,11 +26,7 @@
                             include_once 'page_sections/index_header.php';
                          ?>
 			<!-- Header end --> 
-			<!-- slide start -->
-			<?php
-                            include_once 'page_sections/index_slider.php';
-                        ?>
-			<!-- slide end --> 
+			
 			<!-- Main begin-->
 			<div id="main" class="round_8 clearfix mobile-collapse">
                                 <!--home content start-->
