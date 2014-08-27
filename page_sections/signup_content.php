@@ -86,6 +86,7 @@
                 var dataString = "firstName="+firstName+"&lastName="+lastName+
                         "&email="+email+"&organization="+organization+"&description="+
                         description+"&username="+username+"&password="+password;
+                alert(dataString);
                 //now do the ajax call...
                 $.ajax({
                     url: 'page_sections/register_member.php',		

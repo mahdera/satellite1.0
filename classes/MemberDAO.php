@@ -33,6 +33,7 @@ class MemberDAO {
             if (!DBConnection::getInstance()->insert('tbl_member', $memberInsert = array())) {
                 throw new Exception('There was a problem saving Member.');
             }
+            
         } catch (Exception $ex) {
             error_log($ex->__toString());
         }

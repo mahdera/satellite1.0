@@ -22,8 +22,7 @@ class UserDAO {
     public function save($user){
         try{
 
-            $userInsert = DBConnection::getInstance()->insert('tbl_user', array(
-                'user_id'                   => $this->getUserId(),
+            $userInsert = DBConnection::getInstance()->insert('tbl_user', array(                
                 'user_type'                 => $this->getUserType(),
                 'username'                  => $this->getUsername(),
                 'user_password'             => $this->getUserPassword(),
@@ -36,7 +35,12 @@ class UserDAO {
                 'user_create_date'          => $this->getUserCreateDate(),
                 'modified_by'               => $this->getModifiedBy(),
                 'modification_date'         => $this->getModificationDate()
-            ));            
+            ));      
+            
+            if (!DBConnection::getInstance()->insert('tbl_user', $userInsert = array())) {
+                throw new Exception('There was a problem saving user.');
+            }
+            
         } catch (Exception $ex) {
             error_log($ex->__toString());
         }
