@@ -10,7 +10,7 @@
     $userType = "Member";
     $registrationDate = date("Y-m-d h:i:sa");
     
-    //echo $firstName.' '.$lastName.' '.$email.' '.$organization.' '.$description;
+    //echo $firstName.' '.$lastName.' '.$email.' '.$organization.' '.$description.' '.$username.' '.$password;
     require_once '../core/init.php';   
     
     $user = new User();
@@ -28,7 +28,7 @@
     $user->setModificationDate($registrationDate);    
     //now save the user object to the database...
     $saveUserObj = new User();
-    $saveUserObj->save();   
+    $saveUserObj->save($user);
     
     //now save the member object to the database...
     $fetchedUser = $user->getUserUsingEmailAddress($email);

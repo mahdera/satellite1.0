@@ -36,7 +36,7 @@
                 </div>
                 <div class="form_field">
                         <label><strong>Description</strong> </label>
-                        <textarea name="cform_message" id="textareadescription" style="width:100%" rows="8" class="textarea round_6"></textarea>
+                        <textarea name="textareadescription" id="textareadescription" style="width:100%" rows="8" class="textarea round_6"></textarea>
                 </div>
                 <div class="form_field">
                     <input type="button" class="fancy" value="Register" id="btnregister" />
@@ -57,36 +57,42 @@
             var password = $('#txtpassword').val();
             var confirmPassword = $('#txtconfirmpassword').val();
             
+                        
             if(firstName === ""){
                 $('#errorDiv').html('Please enter your first name');
                 $('#errorDiv').show();
                 $('#txtfirstname').focus();
             }else if(lastName === ""){
                 $('#errorDiv').html('Please enter your last name');
+                $('#errorDiv').show();
                 $('#txtlastname').focus();
             }else if(email === ""){
                 $('#errorDiv').html('Please enter your email');
+                $('#errorDiv').show();
                 $('#txtemail').focus();
             }else if(username === ""){
                 $('#errorDiv').html('Please enter your username');
+                $('#errorDiv').show();
                 $('#txtemail').focus();
             }else if(password === ""){
                 $('#errorDiv').html('Please enter your password');
+                $('#errorDiv').show();
                 $('#txtemail').focus();
             }else if(confirmPassword === ""){
                 $('#errorDiv').html('Please enter the confirmation password');
+                $('#errorDiv').show();
                 $('#txtemail').focus();
             }else if(password !== confirmPassword){
                 $('#errorDiv').html('Password and confirmation password are not identical! Try again!');
+                $('#errorDiv').show();
                 $('#txtemail').focus();
-            }else{
+            }else{                
                 //validation has passed...
                 var organization = $('#txtorganization').val();
                 var description = $('#textareadescription').val();
-                var dataString = "firstName="+firstName+"&lastName="+lastName+
-                        "&email="+email+"&organization="+organization+"&description="+
+                var dataString = "firstName="+firstName+"&lastName="+lastName+"&email="+email+"&organization="+organization+"&description="+
                         description+"&username="+username+"&password="+password;
-                alert(dataString);
+                //alert(dataString);
                 //now do the ajax call...
                 $.ajax({
                     url: 'page_sections/register_member.php',		
@@ -101,7 +107,7 @@
                         clearFormInputFields();
                         setTimeout(function() {
                             $('#successDiv').fadeOut('slow');
-                        }, 2000); // <-- time in milliseconds
+                        }, 3000); // <-- time in milliseconds
                     },
                     error:function(error){
                         alert(error);
@@ -159,7 +165,10 @@
             $('#txtlastname').val('');
             $('#txtemail').val('');
             $('#txtorganization').val('');
-            $('#textareadescription').val('');            
+            $('#textareadescription').val('');  
+            $('#txtusername').val('');
+            $('#txtpassword').val('');
+            $('#txtconfirmpassword').val('');
         }
         
     });//end document.ready function

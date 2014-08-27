@@ -11,7 +11,7 @@
  *
  * @author alemayehu
  */
-//require_once '../lib/PHPDebug.php';
+require_once '../lib/PHPDebug.php';
 
 class DBConnection {
 
@@ -74,7 +74,9 @@ class DBConnection {
                     $x++;
                 }
             }
-            //var_dump($expression)            
+            
+            PHPDebug::printLogText($this->_query, '../lib/debug.txt');
+            
             if ($this->_query->execute()) {
                 $this->_results = $this->_query->fetchAll(PDO::FETCH_OBJ);
                 $this->_count = $this->_query->rowCount();
@@ -156,7 +158,7 @@ class DBConnection {
             }
 
             $sql = "INSERT INTO {$table} (`" . implode('`, `', $keys) . "`) VALUES( {$values} )";
-            //var_dump($sql);
+            //PHPDebug::printLogText($sql, '../lib/debug.txt');
             if (!$this->query($sql, $fields)->error()) {
                 return true;
             }

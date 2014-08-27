@@ -159,6 +159,7 @@ class User {
     }
     
     public function save($user){
+        //var_dump($user);
     	$userDao = new UserDAO();
         $userDao->save($user);
     }

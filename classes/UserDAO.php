@@ -12,6 +12,7 @@
  * @author alemayehu
  */
 require_once '../core/init.php';
+require_once '../lib/PHPDebug.php';
 
 class UserDAO {    
 
@@ -23,20 +24,20 @@ class UserDAO {
         try{
 
             $userInsert = DBConnection::getInstance()->insert('tbl_user', array(                
-                'user_type'                 => $this->getUserType(),
-                'username'                  => $this->getUsername(),
-                'user_password'             => $this->getUserPassword(),
-                'user_full_name'            => $this->getUserFullName(),
-                'user_status'               => $this->getUserStatus(),
-                'email'                     => $this->getEmail(),
-                'user_last_valid_login'     => $this->getUserLastValidLogin(),
-                'user_first_invalid_login'  => $this->getUserFirstInvalidLogin(),
-                'user_faild_login_count'    => $this->getUserFailedLoginCount(),
-                'user_create_date'          => $this->getUserCreateDate(),
-                'modified_by'               => $this->getModifiedBy(),
-                'modification_date'         => $this->getModificationDate()
-            ));      
-            
+                'user_type'                 => $user->getUserType(),
+                'username'                  => $user->getUsername(),
+                'user_password'             => $user->getUserPassword(),
+                'user_full_name'            => $user->getUserFullName(),
+                'user_status'               => $user->getUserStatus(),
+                'email'                     => $user->getEmail(),
+                'user_last_valid_login'     => $user->getUserLastValidLogin(),
+                'user_first_invalid_login'  => $user->getUserFirstInvalidLogin(),
+                'user_faild_login_count'    => $user->getUserFailedLoginCount(),
+                'user_create_date'          => $user->getUserCreateDate(),
+                'modified_by'               => $user->getModifiedBy(),
+                'modification_date'         => $user->getModificationDate()
+            )); 
+            //PHPDebug::printLogText($userInsert, '../lib/debug.txt');            
             if (!DBConnection::getInstance()->insert('tbl_user', $userInsert = array())) {
                 throw new Exception('There was a problem saving user.');
             }
