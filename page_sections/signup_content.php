@@ -53,16 +53,31 @@
             var firstName = $('#txtfirstname').val();
             var lastName = $('#txtlastname').val();
             var email = $('#txtemail').val();
+            var username = $('#txtusername').val();
+            var password = $('#txtpassword').val();
+            var confirmPassword = $('#txtconfirmpassword').val();
             
-            if(firstName == ""){
+            if(firstName === ""){
                 $('#errorDiv').html('Please enter your first name');
                 $('#errorDiv').show();
                 $('#txtfirstname').focus();
-            }else if(lastName == ""){
+            }else if(lastName === ""){
                 $('#errorDiv').html('Please enter your last name');
                 $('#txtlastname').focus();
-            }else if(email == ""){
+            }else if(email === ""){
                 $('#errorDiv').html('Please enter your email');
+                $('#txtemail').focus();
+            }else if(username === ""){
+                $('#errorDiv').html('Please enter your username');
+                $('#txtemail').focus();
+            }else if(password === ""){
+                $('#errorDiv').html('Please enter your password');
+                $('#txtemail').focus();
+            }else if(confirmPassword === ""){
+                $('#errorDiv').html('Please enter the confirmation password');
+                $('#txtemail').focus();
+            }else if(password !== confirmPassword){
+                $('#errorDiv').html('Password and confirmation password are not identical! Try again!');
                 $('#txtemail').focus();
             }else{
                 //validation has passed...
@@ -70,7 +85,7 @@
                 var description = $('#textareadescription').val();
                 var dataString = "firstName="+firstName+"&lastName="+lastName+
                         "&email="+email+"&organization="+organization+"&description="+
-                        description;
+                        description+"&username="+username+"&password="+password;
                 //now do the ajax call...
                 $.ajax({
                     url: 'page_sections/register_member.php',		
@@ -115,7 +130,28 @@
                 $('#errorDiv').html('');
                 $('#errorDiv').hide();
             }
-        });  
+        });
+        
+        $('#txtusername').keyup(function(){
+            if($(this).val() !== ""){
+                $('#errorDiv').html('');
+                $('#errorDiv').hide();
+            }
+        });
+        
+        $('#txtpassword').keyup(function(){
+            if($(this).val() !== ""){
+                $('#errorDiv').html('');
+                $('#errorDiv').hide();
+            }
+        });
+        
+        $('#txtconfirmpassword').keyup(function(){
+            if($(this).val() !== ""){
+                $('#errorDiv').html('');
+                $('#errorDiv').hide();
+            }
+        });
         
         function clearFormInputFields(){
             $('#txtfirstname').val('');

@@ -158,8 +158,9 @@ class User {
         $this->sessionName = $sessionName;
     }
     
-    public function create(){
-    	$userDAO->save($this);
+    public function save($user){
+    	$userDao = new UserDAO();
+        $userDao->save($user);
     }
     
     public function update($user){
