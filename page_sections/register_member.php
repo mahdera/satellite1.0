@@ -28,7 +28,7 @@
     $user->setModificationDate($registrationDate);    
     //now save the user object to the database...
     $saveUserObj = new User();
-    $saveUserObj->save($user);
+    //$saveUserObj->save($user);
     
     //now save the member object to the database...
     $fetchedUser = $user->getUserUsingEmailAddress($email);
@@ -38,7 +38,7 @@
     $member->setLastName($lastName);
     $member->setOrganization($organization);
     $member->setDescription($description);
-    $member->setUserId($fetchedUser->getUserId());
+    $member->setUserId($fetchedUser->user_id);//access the raw array as is...
     $saveMemberObj->save($member);
 ?>
 <p>

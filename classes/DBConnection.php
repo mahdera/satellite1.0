@@ -65,6 +65,7 @@ class DBConnection {
     }
 
     public function query($sql, $params = array()) {
+        //var_dump($params);
         $this->_error = false;
         if ($this->_query = $this->_pdo->prepare($sql)) {
             $x = 1;
@@ -75,9 +76,11 @@ class DBConnection {
                 }
             }
             
-            PHPDebug::printLogText($this->_query, '../lib/debug.txt');
+            //PHPDebug::printLogText($this->_query, '../lib/debug.txt');
+            //var_dump($this->_query);
             
             if ($this->_query->execute()) {
+                //var_dump($this->_query);
                 $this->_results = $this->_query->fetchAll(PDO::FETCH_OBJ);
                 $this->_count = $this->_query->rowCount();
             } else {
@@ -159,7 +162,8 @@ class DBConnection {
 
             $sql = "INSERT INTO {$table} (`" . implode('`, `', $keys) . "`) VALUES( {$values} )";
             //PHPDebug::printLogText($sql, '../lib/debug.txt');
-            if (!$this->query($sql, $fields)->error()) {
+            if ( ! $this->query($sql, $fields)->error() ) {
+                var_dump($this->_query);
                 return true;
             }
         }

@@ -11,6 +11,8 @@
  *
  * @author mneway
  */
+require_once '../lib/PHPDebug.php';
+
 class MemberDAO {
 
     public function __construct() {
@@ -19,7 +21,7 @@ class MemberDAO {
 
     public function save($member) {
         try {
-
+            //echo 'let us see '.$member->getUserId();
             $memberInsert = DBConnection::getInstance()->insert('tbl_member', array(
                 'first_name' => $member->getFirstName(),
                 'last_name' => $member->getLastName(),
@@ -29,7 +31,9 @@ class MemberDAO {
                 'modified_by' => $member->getModifiedBy(),
                 'modification_date' => $member->getModificationDate()
             ));
-
+            //echo $memberInsert;
+            //var_dump($memberInsert);
+            PHPDebug::printLogText($memberInsert, '../lib/debug.txt');
             if (!DBConnection::getInstance()->insert('tbl_member', $memberInsert = array())) {
                 throw new Exception('There was a problem saving Member.');
             }

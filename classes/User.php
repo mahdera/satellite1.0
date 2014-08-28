@@ -232,7 +232,8 @@ class User {
 
     public function getUserUsingEmailAddress($email){        
         $userDao = new UserDAO();
-        $fetchedUser = $userDao->findUsingEmail($email);        
+        $fetchedUser = $userDao->findUsingEmail($email);   
+        //var_dump($fetchedUser);
         return $fetchedUser;
     }
 
