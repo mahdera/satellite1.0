@@ -1,0 +1,1 @@
+INSERT INTO tbl_member (`first_name`, `last_name`, `organization`, `description`, `user_id`, `modified_by`, `modification_date`) VALUES( ?, ?, ?, ?, ?, ?, ? )111

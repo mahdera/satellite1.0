@@ -39,6 +39,8 @@
     $member->setOrganization($organization);
     $member->setDescription($description);
     $member->setUserId($fetchedUser->user_id);//access the raw array as is...
+    $member->setModifiedBy(0);
+    $member->setModificationDate($registrationDate);
     $saveMemberObj->save($member);
 ?>
 <p>

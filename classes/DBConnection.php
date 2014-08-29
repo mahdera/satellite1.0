@@ -11,7 +11,7 @@
  *
  * @author alemayehu
  */
-require_once '../lib/PHPDebug.php';
+//require_once '../lib/PHPDebug.php';
 
 class DBConnection {
 
@@ -52,7 +52,7 @@ class DBConnection {
                 echo 'something wrong with the array';
             }
 
-            var_dump($this->_query);
+            //var_dump($this->_query);
 
             if ($this->_query->execute()) {
                 $this->_results = $this->_query->fetchAll(PDO::FETCH_OBJ);
@@ -72,22 +72,51 @@ class DBConnection {
             if (count($params)) {
                 foreach ($params as $param) {
                     $this->_query->bindValue($x, $param);
+                    //echo $param. ' ';
                     $x++;
                 }
             }
             
             //PHPDebug::printLogText($this->_query, '../lib/debug.txt');
             //var_dump($this->_query);
-            
-            if ($this->_query->execute()) {
-                //var_dump($this->_query);
-                $this->_results = $this->_query->fetchAll(PDO::FETCH_OBJ);
-                $this->_count = $this->_query->rowCount();
-            } else {
-                $this->_error = true;
+            try{
+                if ($this->_query->execute()) {
+                    //var_dump($this->_query);
+                    $this->_results = $this->_query->fetchAll(PDO::FETCH_OBJ);
+                    $this->_count = $this->_query->rowCount();
+                } /*else {
+                    //var_dump($stmt->fetchAll());
+                    $this->_error = true;
+                }*/
+            }catch(Exception $ex){
+                pdoErrorHandler();
+                return false;
             }
         }
         return $this;
+    }
+    
+    function pdoErrorHandler() {
+        //get all the stuff that we set in the table model
+        global $_tm;
+        $sql = $_tm->_sql;
+        $params = $_tm->_params;
+        $query = $tm->_query;
+
+        $message = 'PDO error: ' . $sql . ' (' . implode(', ', $params) . ") \n";
+
+        //get trace info, so we can know where the sql call originated from
+        ob_start();
+        debug_backtrace(); //I have a custom method here that parses debug backtrace, but this will work as well
+        $trace = ob_get_clean();
+
+        //log the error in a civilized manner
+        error_log($message);
+
+        if(true){
+            //print error to screen based on your environment, logged in credentials, etc.
+            print_r($message);
+        }
     }
 
     public function error() {
@@ -163,7 +192,7 @@ class DBConnection {
             $sql = "INSERT INTO {$table} (`" . implode('`, `', $keys) . "`) VALUES( {$values} )";
             //PHPDebug::printLogText($sql, '../lib/debug.txt');
             if ( ! $this->query($sql, $fields)->error() ) {
-                var_dump($this->_query);
+                //var_dump($this->_query);
                 return true;
             }
         }
