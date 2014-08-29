@@ -14,6 +14,11 @@
 	<link rel="shortcut icon"  href="img/favicon.ico" />
         <!-- Responsive CSS section -->
         <link rel="stylesheet" href="css/responsive.css" type="text/css" media="screen and (max-width: 900px)"/>
+        
+        
+        <link rel="stylesheet" type="text/css" href="css/style.css" />		
+        <link rel="stylesheet" type="text/css" href="css/style-google.css"/>
+        <link rel="stylesheet" type="text/css" href="css/style-form-validation.css"/>
 </head>
 <body>
 	<div id="content-wrapper"> 
