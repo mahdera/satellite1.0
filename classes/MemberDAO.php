@@ -21,7 +21,7 @@ class MemberDAO {
 
     public function save($member) {
         try {
-            //echo 'let us see '.$member->getUserId();
+            //var_dump($member);
             $memberInsert = DBConnection::getInstance()->insert('tbl_member', array(
                 'first_name' => $member->getFirstName(),
                 'last_name' => $member->getLastName(),
@@ -33,7 +33,7 @@ class MemberDAO {
             ));
             //echo $memberInsert;
             //var_dump($memberInsert);
-            PHPDebug::printLogText($memberInsert, '../lib/debug.txt');
+            //PHPDebug::printLogText($memberInsert, '../lib/debug.txt');
             if (!DBConnection::getInstance()->insert('tbl_member', $memberInsert = array())) {
                 throw new Exception('There was a problem saving Member.');
             }

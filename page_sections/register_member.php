@@ -28,7 +28,7 @@
     $user->setModificationDate($registrationDate);    
     //now save the user object to the database...
     $saveUserObj = new User();
-    //$saveUserObj->save($user);
+    $saveUserObj->save($user);
     
     //now save the member object to the database...
     $fetchedUser = $user->getUserUsingEmailAddress($email);
@@ -39,7 +39,7 @@
     $member->setOrganization($organization);
     $member->setDescription($description);
     $member->setUserId($fetchedUser->user_id);//access the raw array as is...
-    $member->setModifiedBy(0);
+    $member->setModifiedBy(1);
     $member->setModificationDate($registrationDate);
     $saveMemberObj->save($member);
 ?>
@@ -47,3 +47,4 @@
     Registration completed successfully! You will be notified via email when your account
     gets approved and activated by the administrator.
 </p>
+

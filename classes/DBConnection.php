@@ -38,8 +38,7 @@ class DBConnection {
         return self::$_instance;
     }
 
-    public function fetchResultSet($sql, $params = array()) {
-        //var_dump($params);passed
+    public function fetchResultSet($sql, $params = array()) {        
         $this->_error = false;
         if ($this->_query = $this->_pdo->prepare($sql)) {
             $x = 1;
@@ -52,72 +51,42 @@ class DBConnection {
                 echo 'something wrong with the array';
             }
 
-            //var_dump($this->_query);
-
+            
             if ($this->_query->execute()) {
                 $this->_results = $this->_query->fetchAll(PDO::FETCH_OBJ);
-                $this->_count = $this->_query->rowCount();
-            } else {
+                $this->_count = $this->_query->rowCount();            
+            } else {                
                 $this->_error = true;
             }
         }
         return $this->_results;
     }
 
-    public function query($sql, $params = array()) {
+    public function query($sql, $params = array()){
         //var_dump($params);
-        $this->_error = false;
-        if ($this->_query = $this->_pdo->prepare($sql)) {
+        $this-> _error = false;
+        if($this-> _query = $this->_pdo->prepare($sql)){
             $x = 1;
-            if (count($params)) {
-                foreach ($params as $param) {
+            if(count($params)){
+                foreach($params as $param){
                     $this->_query->bindValue($x, $param);
-                    //echo $param. ' ';
                     $x++;
                 }
+                //var_dump($this->_query);
             }
-            
-            //PHPDebug::printLogText($this->_query, '../lib/debug.txt');
-            //var_dump($this->_query);
-            try{
-                if ($this->_query->execute()) {
-                    //var_dump($this->_query);
-                    $this->_results = $this->_query->fetchAll(PDO::FETCH_OBJ);
-                    $this->_count = $this->_query->rowCount();
-                } /*else {
-                    //var_dump($stmt->fetchAll());
-                    $this->_error = true;
-                }*/
-            }catch(Exception $ex){
-                pdoErrorHandler();
-                return false;
+                        
+            if($this->_query->execute()){
+                //echo 'exec is working!';
+                $this->_results = $this->_query->fetchAll(PDO::FETCH_OBJ);
+                $this->_count = $this->_query->rowCount();
+            }else{
+                //echo 'exec failed';
+                //echo $this->_query->debugDumpParams();                
+                $this->_error = true;
             }
         }
         return $this;
-    }
-    
-    function pdoErrorHandler() {
-        //get all the stuff that we set in the table model
-        global $_tm;
-        $sql = $_tm->_sql;
-        $params = $_tm->_params;
-        $query = $tm->_query;
-
-        $message = 'PDO error: ' . $sql . ' (' . implode(', ', $params) . ") \n";
-
-        //get trace info, so we can know where the sql call originated from
-        ob_start();
-        debug_backtrace(); //I have a custom method here that parses debug backtrace, but this will work as well
-        $trace = ob_get_clean();
-
-        //log the error in a civilized manner
-        error_log($message);
-
-        if(true){
-            //print error to screen based on your environment, logged in credentials, etc.
-            print_r($message);
-        }
-    }
+    }   
 
     public function error() {
         return $this->_error;
@@ -194,6 +163,8 @@ class DBConnection {
             if ( ! $this->query($sql, $fields)->error() ) {
                 //var_dump($this->_query);
                 return true;
+            } else{
+                //var_dump($this->_query);
             }
         }
         return false;
