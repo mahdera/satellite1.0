@@ -14,13 +14,22 @@
 	<link rel="shortcut icon"  href="img/favicon.ico" />
         <!-- Responsive CSS section -->
         <link rel="stylesheet" href="css/responsive.css" type="text/css" media="screen and (max-width: 900px)"/>
-        
-        
-        <link rel="stylesheet" type="text/css" href="css/style.css" />		
-        <link rel="stylesheet" type="text/css" href="css/style-google.css"/>
-        <link rel="stylesheet" type="text/css" href="css/style-form-validation.css"/>
+               
 </head>
 <body>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+        
+        <script>
+            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+        </script>
+        
 	<div id="content-wrapper"> 
 		<!-- Container begin -->
 		<div id="container"> 
@@ -28,7 +37,7 @@
 			<?php
                             include_once 'core/indexinit.php';
                             include_once 'page_sections/index_header.php';
-                         ?>
+                        ?>
 			<!-- Header end --> 
 			<!-- slide start -->
 			<?php
@@ -65,18 +74,44 @@
         ?>
         <!--end import javascript files-->
 </body>
-	<script type="text/javascript">
-            $(document).ready(function(){					    
-                $('#slider').nivoSlider({
-                    effect: 'fade' 		
-                });		    
+    <script type="text/javascript">
+        $(document).ready(function(){					    
+            $('#slider').nivoSlider({
+                effect: 'fade' 		
+            });		    
 
-                // Quick Menu
-                $('#quickmenu').tinycarousel({ 
-                    axis: 'y',
-                    display: 3, 
-                    duration: 500
-                });
-            });//end document.ready function
-	</script> 
+            // Quick Menu
+            $('#quickmenu').tinycarousel({ 
+                axis: 'y',
+                display: 3, 
+                duration: 500
+            });
+            
+            $('#btnlogin').click(function(){
+                //now get the values from the form...
+                var email = $('#txtemail').val();
+                var username = $('#txtusername').val();
+                var password = $('#txtpassword').val();
+                
+                if(email != "" && username != "" && password != ""){
+                    var dataString = "email="+email+"&username="+username+
+                            "&password="+password;
+                    
+                }else{
+                    //code to print validation message...
+                }
+                
+            });
+            
+            $('#btnreset').click(function(){
+                $('#txtemail').val('');
+                $('#txtusername').val('');
+                $('#txtpassword').val('');
+            });
+            
+            //remove this class which is dynamically added to the page...
+            $('.loading').empty();
+            
+        });//end document.ready function
+    </script> 
 </html>
