@@ -104,17 +104,18 @@
                         $('#successDiv').html(response);                        
                         $('#successDiv').show();
                         //now clear the fields
-                        //clearFormInputFields();
-                        /*
+                        clearFormInputFields();
+                        
                         setTimeout(function() {
                             $('#successDiv').fadeOut('slow');
                         }, 3000); // <-- time in milliseconds
-                        */
+                        
                     },
                     error:function(error){
                         alert(error);
                     }
                 });
+                
             }//end else condition...
             
         });//end btn.click function

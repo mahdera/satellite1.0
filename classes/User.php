@@ -213,9 +213,9 @@ class User {
     			//now the username and the password happen to be the same...
     			//I need to filter once more which is using password
     			if($fetchedUser->user_password === MD5($password)){    				
-    				//login successfull
-                    Session::put($this->sessionName, $fetchedUser->user_id);
-    				return true;
+                            //login successfull
+                            Session::put($this->sessionName, $fetchedUser->user_id);
+                            return true;
     			}
     		}	
     	}else{

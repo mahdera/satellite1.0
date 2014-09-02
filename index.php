@@ -25,7 +25,7 @@
             js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));</script>
-        
+
         <script>
             !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
         </script>
@@ -96,7 +96,28 @@
                 if(email != "" && username != "" && password != ""){
                     var dataString = "email="+email+"&username="+username+
                             "&password="+password;
-                    
+                    $.ajax({
+                    url: 'page_sections/validate_member.php',		
+                    data: dataString,
+                    type:'POST',
+                    success:function(data){                                                
+                        //clearFormInputFields();
+                        //upon success redirect page to member_dashboard.php...
+                        //window.location.href = "member_dash_board.php";
+                        
+                        if (!data.success) {
+                            $scope.message = "Invalid user credential! Try again.";
+                        } else {
+                            // if successful, bind success message to message
+                            //redirect the page to adminhome.php
+                            window.location.href = "member_dash_board.php";
+                        }
+                        //alert(data);
+                    },
+                    error:function(error){
+                        alert(error);
+                    }
+                });
                 }else{
                     //code to print validation message...
                 }

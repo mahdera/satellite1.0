@@ -9,38 +9,7 @@
             </form>
         </div>
     </div>
-    <div class="sidebar-widget shadow-light mobile-collapse"> 
-        <a href="#" class="promo-container mobile-collapse">
-            <!--<img src="img/stock/promo-245x162.jpg" alt="ad" />-->
-            <form>
-                <table border="0" width="100%" style="border-color: #fff">
-                    <tr style="border-color: #fff">
-                        <td style="border-color: #fff" width="5%">Email:</td>
-                        <td style="border-color: #fff">
-                            <input type="email" name="txtemail" id="txtemail" size="18%"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="border-color: #fff" width="5%">Username:</td>
-                        <td style="border-color: #fff">
-                            <input type="text" name="txtusername" id="txtusername" size="18%"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="border-color: #fff" width="5%">Password:</td>
-                        <td style="border-color: #fff">
-                            <input type="password" name="txtpassword" id="txtpassword" size="18%"/>
-                    </tr>
-                    <tr>
-                        <td colspan="2" align="right" style="border-color: #fff">
-                            <a href="#.php" id="btnlogin" class="blue small fancy">Login</a>
-                            <a href="#.php" id="btnreset" class="blue small fancy">Clear</a>
-                        </td>
-                    </tr>
-                </table>
-            </form>
-        </a>
-    </div>
+    
     <div class="sidebar-widget shadow-light mobile-collapse">
         <!--
         <div class="testimonials-container mobile-collapse">

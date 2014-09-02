@@ -17,6 +17,10 @@
         <script type="text/javascript" src="admin_js/jquery-1.11.0.js"></script>
 </head>
 <body>
+        <?php
+            include_once 'page_sections/social_media_js_imports.php';
+        ?>
+    
 	<div id="content-wrapper"> 
 		<!-- Container begin -->
 		<div id="container"> 
@@ -37,7 +41,7 @@
                                 
                                 <!--home content side bar start-->
 				<?php
-                                    include_once 'page_sections/index_home_side_bar.php';
+                                    include_once 'page_sections/index_signup_home_side_bar.php';
                                 ?>
                                 <!--end home content side bar-->
 			</div>

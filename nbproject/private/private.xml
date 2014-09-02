@@ -2,6 +2,20 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/Applications/MAMP/htdocs/satellite1.0/page_sections/index_home_side_bar.php</file>
+            <file>file:/Applications/MAMP/htdocs/satellite1.0/page_sections/social_media_js_imports.php</file>
+            <file>file:/Applications/MAMP/htdocs/satellite1.0/page_sections/validate_admin.php</file>
+            <file>file:/Applications/MAMP/htdocs/satellite1.0/page_sections/validate_member.php</file>
+            <file>file:/Applications/MAMP/htdocs/satellite1.0/page_sections/index.php</file>
+            <file>file:/Applications/MAMP/htdocs/satellite1.0/classes/User.php</file>
+            <file>file:/Applications/MAMP/htdocs/satellite1.0/page_sections/admin_index_home_content.php</file>
+            <file>file:/Applications/MAMP/htdocs/satellite1.0/page_sections/register_member.php</file>
+            <file>file:/Applications/MAMP/htdocs/satellite1.0/index.php</file>
+            <file>file:/Applications/MAMP/htdocs/satellite1.0/angular_js/controllers/AdminLoginController.js</file>
+            <file>file:/Applications/MAMP/htdocs/satellite1.0/page_sections/index_signup_home_side_bar.php</file>
+            <file>file:/Applications/MAMP/htdocs/satellite1.0/classes/Member.php</file>
+            <file>file:/Applications/MAMP/htdocs/satellite1.0/signup.php</file>
+        </group>
     </open-files>
 </project-private>
