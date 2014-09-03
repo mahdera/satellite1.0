@@ -46,7 +46,7 @@
                         <a href="#">Manage Content <span class="fa arrow"></span></a>
                         <ul class="nav nav-third-level">
                             <li>
-                                <a href="#/view/setting/lowerbox/content/add/<?php echo $userId;?>">Add Content</a>
+                                <a ng-href="#/view/setting/lowerbox/content/add/<?php echo $userId;?>">Add Content</a>
                             </li>
                             <li>
                                 <a href="#/view/setting/lowerbox/content/view">View Content</a>
@@ -64,10 +64,10 @@
                         <a href="#">News <span class="fa arrow"></span></a>
                         <ul class="nav nav-third-level">
                             <li>
-                                <a href="#">Add News</a>
+                                <a ng-href="#/view/setting/news/content/add/<?php echo $userId;?>">Add Content</a>
                             </li>
                             <li>
-                                <a href="#">View News</a>
+                                <a href="#/view/setting/news/content/view">View News</a>
                             </li>                            
                         </ul>
                         <!-- /.nav-third-level -->

@@ -19,7 +19,7 @@ class NewsDAO {
 
     public function save($news) {
         try {
-
+            //var_dump($news);
             $newsInsert = DBConnection::getInstance()->insert('tbl_news', array(
                 'title' => $news->getTitle(),
                 'author' => $news->getAuthor(),

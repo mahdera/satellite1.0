@@ -60,9 +60,13 @@ adminDashboardApp.config(['$routeProvider',
                     templateUrl: 'show_add_lowerbox_content_form.php',
                     controller: 'AddLowerBoxContentController'
                 }).
-                when('view/setting/lowerbox/content/add/:uId', {
+                when('/view/setting/lowerbox/content/add/:uId', {
                     templateUrl: 'show_add_lowerbox_content_form.php',
                     controller: 'AddLowerBoxContentController'
+                }).
+                when('/view/setting/news/content/add/:uId', {                    
+                    templateUrl: 'show_add_news_content_form.php',
+                    controller: 'AddNewsContentController'
                 });
 
 

@@ -40,3 +40,4 @@
 <script type="text/javascript" src="../angular_js/controllers/ListCenterBoxContentController.js"></script>
 <script type="text/javascript" src="../angular_js/controllers/EditCenterBoxConttentController.js"></script>
 <script type="text/javascript" src="../angular_js/controllers/AddLowerBoxContentController.js"></script>
+<script type="text/javascript" src="../angular_js/controllers/AddNewsContentController.js"></script>
