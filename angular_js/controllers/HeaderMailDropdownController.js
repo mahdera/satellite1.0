@@ -3,3 +3,7 @@
 adminDashboardApp.controller('HeaderMailDropdownController', function HeaderMailDropdownController($scope, $routeParams){
 	
 });//end controller
+
+memberDashboardApp.controller('HeaderMailDropdownController', function HeaderMailDropdownController($scope, $routeParams){
+	
+});//end controller

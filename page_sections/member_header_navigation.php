@@ -1,4 +1,3 @@
-<div>
 <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
     <span class="sr-only">Toggle navigation</span>
@@ -13,7 +12,7 @@
 
         $userFullName = (isset($userFullName) ? $userFullName->user_full_name : 'Administrator');
     ?>
-    <a class="navbar-brand" ng-href="">Satellite Admin | <span style="color: black;"><?php echo $userFullName;?> logged in</span></a>
+    <a class="navbar-brand" ng-href="">Satellite Member | <span style="color: black;"><?php echo $userFullName;?> logged in</span></a>
     
 </div>
 <!-- /.navbar-header -->

@@ -93,31 +93,34 @@
                 var username = $('#txtusername').val();
                 var password = $('#txtpassword').val();
                 
-                if(email != "" && username != "" && password != ""){
+                if(email !== "" && username !== "" && password !== ""){
                     var dataString = "email="+email+"&username="+username+
                             "&password="+password;
-                    $.ajax({
-                    url: 'page_sections/validate_member.php',		
-                    data: dataString,
-                    type:'POST',
-                    success:function(data){                                                
-                        //clearFormInputFields();
-                        //upon success redirect page to member_dashboard.php...
-                        //window.location.href = "member_dash_board.php";
-                        
-                        if (!data.success) {
-                            $scope.message = "Invalid user credential! Try again.";
-                        } else {
-                            // if successful, bind success message to message
-                            //redirect the page to adminhome.php
-                            window.location.href = "member_dash_board.php";
-                        }
-                        //alert(data);
-                    },
-                    error:function(error){
-                        alert(error);
-                    }
-                });
+                        $.ajax({
+                            url: 'page_sections/validate_member.php',		
+                            data: dataString,
+                            type:'POST',
+                            success:function(data){                                                
+                                //clearFormInputFields();
+                                //upon success redirect page to member_dashboard.php...
+                                var jsonVal = JSON.parse(data);
+                                //alert(jsonVal);
+                                //alert(jsonVal.success);
+
+                                if (!jsonVal.success) {
+                                    //$scope.message = "";
+                                    alert("Invalid user credential! Try again.");
+                                } else {
+                                    // if successful, bind success message to message
+                                    //redirect the page to adminhome.php
+                                    window.location.href = "page_sections/member_dash_board.php";
+                                }
+                                //alert(data);
+                            },
+                            error:function(error){
+                                alert(error);
+                            }
+                        });
                 }else{
                     //code to print validation message...
                 }
