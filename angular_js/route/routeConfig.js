@@ -67,6 +67,10 @@ adminDashboardApp.config(['$routeProvider',
                 when('/view/setting/news/content/add/:uId', {                    
                     templateUrl: 'show_add_news_content_form.php',
                     controller: 'AddNewsContentController'
+                }).
+                when('/view/setting/event/content/add/:uId', {
+                    templateUrl: 'show_add_event_content_form.php',
+                    controller: 'AddEventContentController'
                 });
 
 

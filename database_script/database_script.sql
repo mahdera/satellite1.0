@@ -89,3 +89,15 @@ create table tbl_member(
     foreign key(user_id) references tbl_user(user_id),
     foreign key(modified_by) references tbl_user(user_id)
 );
+
+create table tbl_event(
+    event_id int auto_increment,
+    title varchar(70) not null,
+    author varchar(70) not null,
+    post_date datetime not null,
+    event_detail text not null,
+    modified_by int not null,
+    modification_date datetime not null,
+    primary key(event_id),
+    foreign key(modified_by) references tbl_user(user_id)
+);

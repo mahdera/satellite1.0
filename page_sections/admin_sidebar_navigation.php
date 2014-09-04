@@ -76,26 +76,14 @@
                         <a href="#">Events <span class="fa arrow"></span></a>
                         <ul class="nav nav-third-level">
                             <li>
-                                <a href="#">Add Event</a>
+                                <a ng-href="#/view/setting/event/content/add/<?php echo $userId;?>">Add Event</a>
                             </li>
                             <li>
-                                <a href="#">View Events</a>
+                                <a href="#/view/setting/event/content/view">View Events</a>
                             </li>                            
                         </ul>
                         <!-- /.nav-third-level -->
-                    </li>
-                    <li>
-                        <a href="#">Contact <span class="fa arrow"></span></a>
-                        <ul class="nav nav-third-level">
-                            <li>
-                                <a href="#">Add Contact</a>
-                            </li>
-                            <li>
-                                <a href="#">View Contact</a>
-                            </li>                            
-                        </ul>
-                        <!-- /.nav-third-level -->
-                    </li>
+                    </li>                    
                 </ul>
                 <!-- /.nav-second-level -->
             </li>            
