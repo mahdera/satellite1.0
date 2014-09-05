@@ -11,6 +11,7 @@ adminDashboardApp.controller('AddEventContentController', function AddEventConte
     $scope.saveEventContent = function() {
         var title = $scope.eventContentForm.title;
         var eventDetail = document.getElementById('eventDetail').value;
+        //alert(eventDetail);
         //now check if the values are not empty
         if (title === "") {
             $scope.message = "Enter the title";
@@ -20,6 +21,7 @@ adminDashboardApp.controller('AddEventContentController', function AddEventConte
             document.getElementById('eventDetail').focus();
         } else {
             //is valid
+            //alert('got here');
             $scope.eventContentForm.eventDetail = document.getElementById('eventDetail').value;
             $http({
                 method: 'POST',
@@ -29,6 +31,8 @@ adminDashboardApp.controller('AddEventContentController', function AddEventConte
             })
                     .success(function(data) {
                         //alert(data);
+                        //var jsonVal = JSON.parse(data);
+                        //alert(jsonVal);
                         if (!data.success) {
                             document.getElementById('processStatusDiv').innerHTML = data.message;
                         } else {
@@ -42,6 +46,7 @@ adminDashboardApp.controller('AddEventContentController', function AddEventConte
     };
 
     function serializeData(data) {
+        //alert(data);
         // If this is not an object, defer to native stringification.
         if (!angular.isObject(data)) {
 

@@ -46,8 +46,8 @@ class Event {
         return $this->postDate;
     }
 
-    public function getNewsDetail() {
-        return $this->newsDetail;
+    public function getEventDetail() {
+        return $this->eventDetail;
     }
 
     public function getModifiedBy() {
@@ -83,6 +83,7 @@ class Event {
     }
 
     public function save($event){
+        //var_dump($event);
         $eventDao = new EventDAO();
         $eventDao->save($event);
     }

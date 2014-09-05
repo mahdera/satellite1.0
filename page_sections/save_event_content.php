@@ -24,6 +24,7 @@
 	$event->setEventDetail($eventDetail);	
 	$event->setModifiedBy($modifiedBy);
 	$event->setModificationDate($postDate);
+        //var_dump($event);
 	
 	$saveEventContentObj = new Event();
 	$saveEventContentObj->save($event);
@@ -34,5 +35,6 @@
 			"Event saved successfully!..." .
 			"</div><br/>";
 	
-	echo json_encode($data);
+	echo json_encode($data);         
+        //echo $data;
 ?>
