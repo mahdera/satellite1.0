@@ -11,45 +11,18 @@
     </div>
     <div class="sidebar-widget shadow-light mobile-collapse"> 
         <a href="#" class="promo-container mobile-collapse">
-            <!--<img src="img/stock/promo-245x162.jpg" alt="ad" />-->
-            <form>
-                <table border="0" width="100%" style="border-color: #fff">
-                    <tr style="border-color: #fff">
-                        <td style="border-color: #fff" width="5%">Email:</td>
-                        <td style="border-color: #fff">
-                            <input type="email" name="txtemail" id="txtemail" size="18%"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="border-color: #fff" width="5%">Username:</td>
-                        <td style="border-color: #fff">
-                            <input type="text" name="txtusername" id="txtusername" size="18%"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="border-color: #fff" width="5%">Password:</td>
-                        <td style="border-color: #fff">
-                            <input type="password" name="txtpassword" id="txtpassword" size="18%"/>
-                    </tr>
-                    <tr>
-                        <td colspan="2" align="right" style="border-color: #fff">
-                            <a href="#.php" id="btnlogin" class="blue small fancy">Login</a>
-                            <a href="#.php" id="btnreset" class="blue small fancy">Clear</a>
-                        </td>
-                    </tr>
-                </table>
-            </form>
+            <img src="img/stock/promo-245x162.jpg" alt="ad" />            
         </a>
     </div>
     <div class="sidebar-widget shadow-light mobile-collapse">
-        <!--
+        
         <div class="testimonials-container mobile-collapse">
             <h3 class="replace">What They Say</h3>
             <p><a href="#">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac egestas.</a><br/>
                 <small><em>John Doe</em></small></p>
               
         </div>
-        -->
+        
         <div>
             <div id="twitter_container" style="opacity: 1.0; height">
                        <ul id="twitter_update_list">

@@ -7,6 +7,7 @@
     $description = $_POST['description'];
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $memberCategory = $_POST['memberCategory'];
     $userType = "Member";
     $registrationDate = date("Y-m-d h:i:sa");
     
@@ -23,7 +24,7 @@
     $user->setUserLastValidLogin(null);
     $user->setUserFirstInvalidLogin(null);
     $user->setUserFailedLoginCount(0);
-    $user->setUserCreateDate($registrationDate);
+    $user->setUserCreateDate($registrationDate);    
     $user->setModifiedBy(0);
     $user->setModificationDate($registrationDate);    
     //now save the user object to the database...
@@ -39,6 +40,7 @@
     $member->setOrganization($organization);
     $member->setDescription($description);
     $member->setUserId($fetchedUser->user_id);//access the raw array as is...
+    $member->setMemberCategory($memberCategory);
     $member->setModifiedBy(1);
     $member->setModificationDate($registrationDate);
     $saveMemberObj->save($member);

@@ -3,12 +3,10 @@
 
     <!-- Navigation start -->
     <ul class="sf-menu">
-        <li> <a href="#">Pages</a></li>
-        <li><a href="#">Samples</a></li>
-        <li><a href="#">Gallery</a></li>
-        <li><a href="colors.html">Colors</a></li>
-        <li><a href="landing.html">Landing page</a></li>
-        <li><a href="signup.php">Sign up</a></li>
+        <li> <a href="index.php">Home</a></li>
+        <li><a href="whatwedo.php">Diensten</a></li>
+        <li><a href="aboutus.php">Overons</a></li>
+        <li><a href="memberlogin.php">Intranet</a></li>        
     </ul>
     <!-- Navigation end --> 
 </div>

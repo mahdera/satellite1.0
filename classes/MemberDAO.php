@@ -28,6 +28,7 @@ class MemberDAO {
                 'organization' => $member->getOrganization(),
                 'description' => $member->getDescription(),
                 'user_id' => $member->getUserId(),
+                'member_category' => $member->getMemberCategory(),
                 'modified_by' => $member->getModifiedBy(),
                 'modification_date' => $member->getModificationDate()
             ));

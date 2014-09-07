@@ -83,6 +83,7 @@ create table tbl_member(
     organization varchar(200) not null,
     description text not null,
     user_id int not null,
+    member_category varchar(50) not null,
     modified_by int not null,
     modification_date datetime not null,
     primary key(member_id),
@@ -99,5 +100,19 @@ create table tbl_event(
     modified_by int not null,
     modification_date datetime not null,
     primary key(event_id),
+    foreign key(modified_by) references tbl_user(user_id)
+);
+
+create table tbl_document_upload(
+    document_upload_id bigint auto_increment,
+    title varchar(100) not null,
+    prepared_by varchar(50) not null,
+    for_category varchar(50) not null,
+    document_path varchar(50) not null,
+    description text not null,
+    upload_date datetime not null,
+    modified_by int not null,
+    modification_date datetime not null,
+    primary key(document_upload_id),
     foreign key(modified_by) references tbl_user(user_id)
 );

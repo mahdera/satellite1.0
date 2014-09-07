@@ -18,6 +18,7 @@ class Member {
     private $organization;
     private $description;
     private $userId;
+    private $memberCategory;
     private $modifiedBy;
     private $modificationDate;
     
@@ -88,7 +89,16 @@ class Member {
     public function setModificationDate($modificationDate) {
         $this->modificationDate = $modificationDate;
     }
+    
+    public function getMemberCategory() {
+        return $this->memberCategory;
+    }
 
+    public function setMemberCategory($memberCategory) {
+        $this->memberCategory = $memberCategory;
+    }
+
+    
     public function save($member){
         $memberDao = new MemberDAO();
         $memberDao->save($member);
@@ -103,6 +113,7 @@ class Member {
             'organization' => $member->getOrganization(),
             'description' => $member->getDescription(),
             'user_id' => $member->getUserId(),
+            'member_category' => $member->getMemberCategory(),
             'modified_by' => $member->getModifiedBy(),
             'modification_date' => $member->getModificationDate()
         );

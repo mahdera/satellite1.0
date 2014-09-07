@@ -31,6 +31,16 @@
                         <input type="password" name="txtconfirmpassword" id="txtconfirmpassword" class="text round_6" size="70%" />
                 </div>
                 <div class="form_field">
+                        <label><strong><font color="red">*</font>Category</strong> </label>
+                        <select name="slctcategory" id="slctcategory" style="width: 60%" class="text round_6">
+                            <option value="" selected="selected">--Select--</option>
+                            <option value="KG">KG</option>
+                            <option value="After School">After School</option>
+                            <option value="KG and After School">KG and After School</option>
+                            <option value="Personnel">Personnel</option>
+                        </select>
+                </div>
+                <div class="form_field">
                         <label><strong>Organization</strong></label>
                         <input type="text" name="txtorganization" id="txtorganization" class="text round_6" size="94%" />
                 </div>
@@ -56,6 +66,7 @@
             var username = $('#txtusername').val();
             var password = $('#txtpassword').val();
             var confirmPassword = $('#txtconfirmpassword').val();
+            var memberCategory = $('#slctcategory').val();
             
                         
             if(firstName === ""){
@@ -86,12 +97,16 @@
                 $('#errorDiv').html('Password and confirmation password are not identical! Try again!');
                 $('#errorDiv').show();
                 $('#txtemail').focus();
+            }else if(memberCategory === ""){
+                $('#errorDiv').html('Please select the member category');
+                $('#errorDiv').show();
+                $('#slctcategory').focus();
             }else{                
                 //validation has passed...
                 var organization = $('#txtorganization').val();
                 var description = $('#textareadescription').val();
                 var dataString = "firstName="+firstName+"&lastName="+lastName+"&email="+email+"&organization="+organization+"&description="+
-                        description+"&username="+username+"&password="+password;
+                        description+"&username="+username+"&password="+password+"&memberCategory="+memberCategory;
                 //alert(dataString);
                 //now do the ajax call...
                 $.ajax({
