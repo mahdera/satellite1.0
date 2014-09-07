@@ -28,6 +28,24 @@
                 <!-- /.nav-second-level -->
             </li>
             <li>
+                <a href="#" style="color:black"><i class="fa fa-wrench fa-fw"></i> <strong>Document Upload</strong><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a ng-href="#/view/setting/document/upload/add">Add Document</a>
+                    </li>
+                    <li>
+                        <a ng-href="#/view/setting/document/upload/list">View Document</a>
+                    </li>                    
+                    <li>
+                        <a ng-href="#/view/setting/document/upload/edit">Edit Document</a>
+                    </li>                    
+                    <li>
+                        <a ng-href="#/view/setting/document/upload/delete">Delete Document</a>
+                    </li>                    
+                </ul>
+                <!-- /.nav-second-level -->
+            </li>
+            <li>
                 <a href="#" style="color:black"><i class="fa fa-wrench fa-fw"></i> <strong>Center Box</strong><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>

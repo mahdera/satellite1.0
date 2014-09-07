@@ -71,6 +71,22 @@ adminDashboardApp.config(['$routeProvider',
                 when('/view/setting/event/content/add/:uId', {
                     templateUrl: 'show_add_event_content_form.php',
                     controller: 'AddEventContentController'
+                }).
+                when('/view/setting/document/upload/add/:uId', {
+                    templateUrl: 'show_add_document_upload_form.php',
+                    controller: 'AddDocumentUploadController'
+                }).
+                when('/view/setting/document/upload/list', {
+                    templateUrl: 'show_list_document_uploads.php',
+                    controller: 'ListDocumentUploadsController'
+                }).
+                when('/view/setting/document/upload/edit', {
+                    templateUrl: 'show_list_document_uploads_for_edit.php',
+                    controller: 'EditDocumentUploadsController'
+                }).
+                when('/view/setting/document/upload/delete', {
+                    templateUrl: 'show_list_document_uploads_for_delete.php',
+                    controller: 'DeleteDocumentUploadsController'
                 });
 
 

@@ -7,71 +7,81 @@
     }
 ?>
 <!DOCTYPE html>
-<html lang="en" ng-app="memberDashboardApp">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <title>Satellite Member Dashboard</title>
-        <!-- Bootstrap Core CSS -->
-        <link href="../admin_css/bootstrap.min.css" rel="stylesheet">
-        <!-- MetisMenu CSS -->
-        <link href="../admin_css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
-        <!-- Timeline CSS -->
-        <link href="../admin_css/plugins/timeline.css" rel="stylesheet">
-        <!-- Custom CSS -->
-        <link href="../admin_css/sb-admin-2.css" rel="stylesheet">
-        <!-- Custom Fonts -->
-        <link href="../font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="../css/style-form-validation.css" rel="stylesheet" type="text/css"/>
-        <!--style for the text editor -->
-        <link rel="stylesheet" type="text/css" href="../jQuery-TE_v.1.4.0/jquery-te-1.4.0.css" />
-        <!--style for the datatables-->
-        <link href="../admin_css/plugins/dataTables.bootstrap.css" rel="stylesheet">
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-    </head>
-    <body>
-        <div id="wrapper">
-            <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-                <!-- Navigation -->
-                <?php                    
-                    //echo 'session value is : '.Session::get(Config::get('session/session_name'));
-                    require_once 'member_header_navigation.php';
-                ?>
-                <!--End Navigation Bar-->
-                <!--Side bar navigation starts-->
-                <?php
-                    require_once 'member_sidebar_navigation.php';
-                ?>
-                <!--End Side Bar Navigation-->
-                <!-- /.navbar-static-side -->
-            </nav>
-            <div id="page-wrapper">
-                
-                <div class="row">
-                    <?php
-                        require_once 'member_main_middle_panel.php';
-                    ?>
-                    <div class="col-lg-4">
-                        <?php
-                            require_once 'member_rightsidebar_notification.php';
-                        ?>
-                    </div>
-                <!-- /.row -->
-            </div>
-            <!-- /#page-wrapper -->
-        </div>
-        <!-- /#wrapper -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<!-- Meta info begin-->
+<title>Peekaboo - Themeforest Site Template by Population2</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="robots" content="index, follow" />
+<!-- Meta info end-->
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<link rel="stylesheet" type="text/css" href="../css/default.css" />
+<link rel="shortcut icon"  href="../img/favicon.ico" />
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="../js/cufon-yui.js"></script>
+<script type="text/javascript" src="../js/Museo.font.js"></script>
+<script type="text/javascript" src="../js/Museo_Sans.font.js"></script>
+<script type="text/javascript" src="../js/supersized.3.1.3.core.min.js"></script>
+<script type="text/javascript" src="../js/superfish-compile.js"></script>
+<script type="text/javascript" src="../js/jquery.colorbox.js"></script>
+<script type="text/javascript" src="../js/jquery.tweet.js"></script>
+<script type="text/javascript" src="../js/p2.js"></script>
+</head>
+<body>
+<div id="content-wrapper"> 
+    
+    <!-- Container begin -->
+    <div id="container"> 
+        <!-- Header begin-->
         <?php
-            require_once 'member_dashboard_js_imports.php';
+            require_once 'member_header.php';
         ?>
-    </body>
+        
+        <!-- Header end --> 
+        
+        <!-- Main begin-->
+        <div id="main" class="round_8 clearfix">
+            <div id="content" class="left">
+                <a class="landing_img" href="#"><img src="../img/stock/640x200_landing.jpg" alt="placeholder"/></a>
+                <div class="intro">
+                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. </p>
+                </div>
+                <div class="col_201 alpha">
+                    <h3 class="replace">Our Teachers</h3>
+                    <div class="thumbnail_60_left" style="background: url(&quot;../img/stock/60x60_thumbnail_1.jpg&quot;) repeat;"></div>
+                    <p class="landing_col">Nunc quis arcu. Donec gangsta placerizzle maurizzle et netus et fames ac turpis egestas lectus.</p>
+                    <a href="#" class="fancy small">Learn More <img class="arrow" src="img/nav-right-arrow.png"/></a><br/>
+                </div>
+                <div class="col_201">
+                    <h3 class="replace">Food &amp; Nutrition</h3>
+                    <div class="thumbnail_60_left" style="background: url(&quot;../img/stock/60x60_thumbnail_2.jpg&quot;) repeat;"></div>
+                    <p class="landing_col">Nunc quis arcu. Gangsta et netus et malesuada fames ac turpis egestas placerizzle maurizzle stuff.</p>
+                    <a href="#" class="fancy small">Learn More <img class="arrow" src="img/nav-right-arrow.png"/></a><br/>
+                </div>
+                <div class="col_201 omega">
+                    <h3 class="replace">Curriculum</h3>
+                    <div class="thumbnail_60_left" style="background: url(&quot;../img/stock/60x60_thumbnail_3.jpg&quot;) repeat;"></div>
+                    <p class="landing_col">Nunc quis arcu. Donec et netus et fames ac turpis egestas ante. Maurizzle stuff lectus.</p>
+                    <a href="#" class="fancy small">Learn More <img class="arrow" src="img/nav-right-arrow.png"/></a><br/>
+                </div>
+            </div>
+            <?php
+                require_once 'member_side_bar.php';
+            ?>
+            <!--side bar ends here -->
+        </div>
+        <!-- Main end --> 
+        <!-- Footer begin -->
+        <?php
+            require_once 'member_footer.php';
+        ?>
+        
+        <!-- Footer end --> 
+    </div>
+    <!-- Container end --> 
+</div>
+
+</body>
 </html>
