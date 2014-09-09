@@ -10,7 +10,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <!-- Meta info begin-->
-<title>Peekaboo - Themeforest Site Template by Population2</title>
+<title>Jungto Member's Page</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
 <meta name="description" content="" />
@@ -40,7 +40,17 @@
         ?>
         
         <!-- Header end --> 
-        
+        <div id="fb-root"></div>
+            <script>
+               (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+            </script>
+            
         <!-- Main begin-->
         <div id="main" class="round_8 clearfix">
             <div id="content" class="left">
@@ -48,23 +58,12 @@
                 <div class="intro">
                     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. </p>
                 </div>
-                <div class="col_201 alpha">
-                    <h3 class="replace">Our Teachers</h3>
-                    <div class="thumbnail_60_left" style="background: url(&quot;../img/stock/60x60_thumbnail_1.jpg&quot;) repeat;"></div>
-                    <p class="landing_col">Nunc quis arcu. Donec gangsta placerizzle maurizzle et netus et fames ac turpis egestas lectus.</p>
-                    <a href="#" class="fancy small">Learn More <img class="arrow" src="img/nav-right-arrow.png"/></a><br/>
-                </div>
-                <div class="col_201">
-                    <h3 class="replace">Food &amp; Nutrition</h3>
-                    <div class="thumbnail_60_left" style="background: url(&quot;../img/stock/60x60_thumbnail_2.jpg&quot;) repeat;"></div>
-                    <p class="landing_col">Nunc quis arcu. Gangsta et netus et malesuada fames ac turpis egestas placerizzle maurizzle stuff.</p>
-                    <a href="#" class="fancy small">Learn More <img class="arrow" src="img/nav-right-arrow.png"/></a><br/>
-                </div>
-                <div class="col_201 omega">
-                    <h3 class="replace">Curriculum</h3>
-                    <div class="thumbnail_60_left" style="background: url(&quot;../img/stock/60x60_thumbnail_3.jpg&quot;) repeat;"></div>
-                    <p class="landing_col">Nunc quis arcu. Donec et netus et fames ac turpis egestas ante. Maurizzle stuff lectus.</p>
-                    <a href="#" class="fancy small">Learn More <img class="arrow" src="img/nav-right-arrow.png"/></a><br/>
+                <div id="memberDetailDiv">
+                    <strong>Member Posts</strong><br/>
+                    <!--<div align="right" style="font-weight: bolder"><a href="logout.php"><font color="blue">Logout</font></a></div>-->
+                    <div id="regDiv">    
+                        <div class="fb-comments" data-href="http://www.tourethiopiadiasporanet.com/memberhome2.php" data-num-posts="8" data-width="650"></div>
+                    </div> 
                 </div>
             </div>
             <?php

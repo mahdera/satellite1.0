@@ -4,15 +4,15 @@
         <!--the first tab to load is the username setting form...-->                                                            
         <form role="form">            
             <div class="form-group">        
-                <label>Title</label>
+                <label><font color="red">*</font>Title</label>
                 <input ng-model="centerBoxForm.title" class="form-control" id="title" name="title" type="text" placeholder="Enter the title..." required=""/>
             </div>            
             <div class="form-group">        
-                <label>Prepared By</label>
+                <label><font color="red">*</font>Prepared By</label>
                 <input ng-model="centerBoxForm.preparedBy" class="form-control" id="preparedBy" name="preparedBy" type="text" placeholder="Enter prepared by..." required=""/>
             </div> 
             <div class="form-group">        
-                <label>For Category</label>
+                <label><font color="red">*</font>For Category</label>
                 <select name="slctforcategory" id="slctforcategory" style="width:100%">
                     <option value="" selected="selected">--Select--</option>
                     <option value="KG">KG</option>
@@ -22,11 +22,11 @@
                 </select>
             </div>            
             <div class="form-group">
-                <label>Description</label>
+                <label><font color="red">*</font>Description</label>
                 <textarea ng-model="centerBoxForm.description" class="form-control jqte-test" id="description" name="description" required=""></textarea>
             </div>  
             <div class="form-group">        
-                <label>Document</label>
+                <label><font color="red">*</font>Document</label>
                 <input ng-model="centerBoxForm.document" class="form-control" id="document" name="document" type="file" required=""/>
             </div> 
             <button type="button" class="btn btn-primary" id="btnsave"> Save
@@ -48,7 +48,12 @@
         });
         
         $('#btnsave').click(function(){
-            alert('button clicked');
+            //now get the values from the form
+            var title = $('#title').val();
+            var preparedBy = $('#preparedBy').val();
+            var category = $('#slctforcategory').val();
+            var description = $('#description').val();
+            
         });
         
     });//end document.ready function

@@ -1,5 +1,5 @@
 <div id="header" class="clearfix">
-    <div id="logo" > <a href="index.html"><img src="img/jlogo.png" alt="logo" /></a> </div>
+    <div id="logo" > <a href="index.html"><img src="img/logo.png" alt="logo" /></a> </div>
     <!-- Navigation start -->
     <ul class="sf-menu">
         <li> <a href="#">Pages</a>
