@@ -31,7 +31,7 @@
                 <a href="#" style="color:black"><i class="fa fa-wrench fa-fw"></i> <strong>Document Upload</strong><span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                     <li>
-                        <a ng-href="#/view/setting/document/upload/add">Add Document</a>
+                        <a ng-href="#/view/setting/document/upload/add/<?php echo $userId;?>">Add Document</a>
                     </li>
                     <li>
                         <a ng-href="#/view/setting/document/upload/list">View Document</a>
